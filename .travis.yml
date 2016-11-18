@@ -11,6 +11,6 @@ after_success:
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - eval $(aws ecr get-login --region us-east-1)
-  - docker tag myrepo:latest 934593447525.dkr.ecr.us-east-1.amazonaws.com/myrepo:petclinic
+  - docker tag myrepo:petclinic 934593447525.dkr.ecr.us-east-1.amazonaws.com/myrepo:petclinic
   - docker push 934593447525.dkr.ecr.us-east-1.amazonaws.com/myrepo:petclinic
   - aws ecs run-task --cluster default --region us-east-1 --task-definition petclinic:1
