@@ -11,6 +11,6 @@ after_success:
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - eval $(aws ecr get-login --region us-east-1)
-  - docker tag myrepo:latest 556771014529.dkr.ecr.us-east-1.amazonaws.com/myrepo:latest
+  - docker tag myrepo:latest 934593447525.dkr.ecr.us-east-1.amazonaws.com/myrepo:latest
   - docker push 556771014529.dkr.ecr.us-east-1.amazonaws.com/myrepo:latest
   - aws ecs run-task --cluster default --region us-east-1 --task-definition dockerDemo:1
